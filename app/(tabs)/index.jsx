@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, FlatList, Text, TouchableOpacity, View, Button, Alert } from 'react-native';
+import { StyleSheet, FlatList, Text, TouchableOpacity, View, Button, Alert, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import DestinationCard from '../../components/destinationCard';
 import { router } from 'expo-router';
@@ -13,6 +13,9 @@ export default function HomeScreen() {
     const [loading, setLoading] = useState(true);
     const [sortedDestinations, setSortedDestinations] = useState([]);
     const [selectedOption, setSelectedOption] = useState(0);
+
+    const { width } = Dimensions.get('window');
+    const cardWidth = width * 0.85;
 
     const options = [
         { label: 'Default Order', value: 0 },
@@ -109,7 +112,7 @@ const styles = StyleSheet.create({
     view: {
         flex: 1,
         padding: 20,
-        width: '85%',
+        maxWidth: {cardWidth},
     },
     deleteButton: {
         justifyContent: 'center',
