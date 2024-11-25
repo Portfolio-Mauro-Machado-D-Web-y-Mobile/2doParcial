@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "components/destinationCard/index.jsx", "app/destination/[id].jsx", "app/(tabs)/create.jsx", "app/(tabs)/index.jsx"  ]
 }
