@@ -8,14 +8,16 @@ import { deleteDestination } from '@/api/connections';
 import { Swipeable } from 'react-native-gesture-handler';
 import { Dropdown } from 'react-native-element-dropdown';
 
+const { width } = Dimensions.get('window');
+    const cardWidth = width * 0.85;
+
 export default function HomeScreen() {
     const { destinations, updateDestinations } = useDestinations();
     const [loading, setLoading] = useState(true);
     const [sortedDestinations, setSortedDestinations] = useState([]);
     const [selectedOption, setSelectedOption] = useState(0);
 
-    const { width } = Dimensions.get('window');
-    const cardWidth = width * 0.85;
+    
 
     const options = [
         { label: 'Default Order', value: 0 },

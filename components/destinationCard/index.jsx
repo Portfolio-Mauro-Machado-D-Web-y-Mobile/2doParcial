@@ -47,7 +47,7 @@ const DestinationCard = ({ destination }) => {
       </View>
       <TouchableOpacity style={[styles.button, favouritePlatformBasedStyle()]} onPress={handleFavourite}>
         <Ionicons
-              name={"star"}
+              name={isAndroid? "star" : "heart"}
               color={"#A0C4FF"}
               size={25}
             />
